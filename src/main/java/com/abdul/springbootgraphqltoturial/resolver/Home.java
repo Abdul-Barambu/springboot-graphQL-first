@@ -6,6 +6,7 @@ import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 
+
 @Component
 @Controller
 public class Home implements GraphQLQueryResolver {
@@ -16,7 +17,7 @@ public class Home implements GraphQLQueryResolver {
     }
 
     @QueryMapping
-    public String name() {
-        return "My name is Abdulkadir Barambu";
+    public String bio(@Argument String name, @Argument Integer age) {
+        return "My name is " + name + " and i am " + age + " years old";
     }
 }

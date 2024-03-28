@@ -1,4 +1,4 @@
 type Query{
     works: String
-    name: String
+    bio(name:String, age: Int): String
 }
