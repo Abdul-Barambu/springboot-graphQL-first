@@ -1,5 +1,6 @@
 package com.abdul.springbootgraphqltoturial.resolver;
 
+import com.abdul.springbootgraphqltoturial.modal.UserRequest;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
@@ -17,7 +18,7 @@ public class Home implements GraphQLQueryResolver {
     }
 
     @QueryMapping
-    public String bio(@Argument String name, @Argument Integer age) {
-        return "My name is " + name + " and i am " + age + " years old";
+    public String bio(@Argument UserRequest userRequest) {
+        return "My name is " + userRequest.getName() + " and i am " + userRequest.getAge() + " years old";
     }
 }
